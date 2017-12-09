@@ -1,32 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardElevation="4dp">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp">
+        android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/rl_cover"
+        <ImageView
+            android:id="@+id/iv_cover"
             android:layout_width="wrap_content"
-            android:layout_height="150dp">
+            android:layout_height="wrap_content"
+            android:src="@drawable/bg_large" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
             <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_favorite_black_24dp"></ImageView>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/bg_large"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_favorite_black_24dp"/>
-        </RelativeLayout>
+                android:layout_margin="9dp"
+                android:text="7.2"
+                android:textColor="#fff" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_cover"
+            android:layout_alignRight="@id/iv_cover"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_fullscreen_black_24dp" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="150dp"
-            android:layout_toRightOf="@+id/rl_cover">
+            android:layout_toRightOf="@+id/iv_cover">
 
             <TextView
                 android:id="@+id/tv_movie_title"
@@ -36,54 +55,44 @@
                 android:text="Movie Title"
                 android:textColor="@color/primary_dark"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/tv_movie_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_movie_title"
                 android:padding="4dp"
                 android:text="Drama, Horror, Action"
                 android:textColor="@color/secondary_text"
                 android:textSize="12sp"
-                android:layout_below="@+id/tv_movie_title"
-                android:textStyle="italic"/>
-            <LinearLayout
-                android:id="@+id/stars"
-                android:layout_width="match_parent"
+                android:textStyle="italic" />
+
+
+            <RatingBar
+                android:id="@+id/rb_movie"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_movie_category">
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_star_black_24dp"/>
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_star_black_24dp"/>
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_star_black_24dp"/>
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_star_half_black_24dp"/>
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:src="@drawable/ic_star_border_black_24dp"/>
-            </LinearLayout>
+                android:numStars="5"
+                android:rating="4.5"
+                android:stepSize="0.5"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_below="@+id/tv_movie_category"
+                android:layout_margin="3dp"/>
 
             <Button
                 android:id="@+id/btn_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:textColor="#fff"
-                android:background="@color/primary_dark"
-                android:text="Movie Overview"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"/>
+                android:layout_margin="4dp"
+                android:background="@color/primary_dark"
+                android:padding="4dp"
+                android:text="Movie Overview"
+                android:textColor="#fff"
+                android:textSize="14sp"
+                android:textAllCaps="false"/>
 
         </RelativeLayout>
 
