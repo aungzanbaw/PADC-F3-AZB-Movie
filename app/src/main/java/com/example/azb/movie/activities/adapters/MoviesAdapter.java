@@ -13,6 +13,9 @@ import com.example.azb.movie.activities.viewholders.ItemMoviesViewHolder;
  */
 
 public class MoviesAdapter extends RecyclerView.Adapter {
+
+//    get context, get layout inflater, inflate the details item, pass detail item into view holder, return view holder
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();

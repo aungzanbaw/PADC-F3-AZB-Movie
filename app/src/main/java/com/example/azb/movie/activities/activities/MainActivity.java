@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         moviesAdapter = new MoviesAdapter();
 
+        // LinearLayoutManager, GridLayoutManager, StaggeredGridLayoutManager
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-
         // RecyclerView need to set layout and set adapter
         rvMovies.setLayoutManager(linearLayoutManager);
         rvMovies.setAdapter(moviesAdapter);
